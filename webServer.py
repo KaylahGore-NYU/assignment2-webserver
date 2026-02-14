@@ -49,13 +49,14 @@ def webServer(port=13331):
     except Exception as e:
       response = b"HTTP/1.1 404 Not Found\r\n"
       response += b"Content-Type: text/html; charset=UTF-8\r\n"
-      response += b"r\n\"
+      response += b"\r\n"
       response += b"<html><body><h1> 404 not found</h1></body></html>"
       connectionSocker.send(response)
       connectionSocker.close()
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
