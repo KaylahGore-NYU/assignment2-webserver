@@ -17,9 +17,9 @@ def webServer(port=13331):
     try:
       message = connectionSocket.recv(1024).decode() #Fill in start -a client is sending you a message   #Fill in end 
       filename = message.split()[1]
-      
-
       f = open(filename[1:], "rb")  
+      filecontent = f.read()
+      f.close()
       
       outputdata = b"HTTP/1.1 200 OK\r\n"
       outputdata += b"Content-Type: text/html; charset=UTF-8\r\n"
@@ -45,6 +45,7 @@ def webServer(port=13331):
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
