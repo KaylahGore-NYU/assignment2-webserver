@@ -23,7 +23,7 @@ def webServer(port=13331):
       filename = message.split()[1]
       
 
-      f = open(filename[1:],     #fill in start              #fill in end   )
+      f = open(filename[1:], rb)   #fill in start              #fill in end   )
       
       
 
@@ -56,6 +56,7 @@ def webServer(port=13331):
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
