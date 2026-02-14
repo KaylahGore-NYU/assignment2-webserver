@@ -43,7 +43,7 @@ def webServer(port=13331):
       for i in f: #for line in file
         output += i
 
-      connectionSocker.send(outputdata)
+      connectionSocket.send(outputdata)
       connectionSocket.close() #closing the connection socket
       
     except Exception as e:
@@ -51,11 +51,12 @@ def webServer(port=13331):
       response += b"Content-Type: text/html; charset=UTF-8\r\n"
       response += b"\r\n"
       response += b"<html><body><h1> 404 not found</h1></body></html>"
-      connectionSocker.send(response)
-      connectionSocker.close()
+      connectionSocket.send(response)
+      connectionSocket.close()
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
