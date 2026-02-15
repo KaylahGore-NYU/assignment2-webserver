@@ -6,6 +6,8 @@ import sys
 
 def webServer(port=13331):
   serverSocket = socket(AF_INET, SOCK_STREAM)
+  serverSocket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+
   
   serverSocket.bind(("", port)) #serverSocket.bind(("", port))
   serverSocket.listen(1)
@@ -43,6 +45,7 @@ def webServer(port=13331):
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
